@@ -1,0 +1,19 @@
+.MuiCard-root{
+    border-radius:16px !important;
+    overflow:hidden;
+    transition:.3s;
+}
+
+.MuiCard-root:hover{
+    transform:translateY(-6px);
+    box-shadow:0 12px 24px rgba(0,0,0,.25);
+}
+
+.MuiCardContent-root{
+    min-height:150px;
+}
+
+.MuiCardActions-root{
+    justify-content:space-between;
+    padding:16px;
+}
