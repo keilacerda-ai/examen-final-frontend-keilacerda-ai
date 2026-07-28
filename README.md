@@ -23,24 +23,87 @@ Aplicación desarrollada en React utilizando Vite y Material UI para la gestión
 - Edición de álbumes.
 - Eliminación de álbumes.
 
-## Instalación
+# Instalación del proyecto
 
-1. Clonar el rerepositorio (este paso lo hará GitHub Classroom automáticamente).
-2. Abrir en VS Code la carpeta de tu repositorio clonado
-3. Instalar las dependencias base:
+## 1. Clonar el repositorio
+
+Este paso será realizado automáticamente mediante GitHub Classroom.
+
+Luego, abrir la carpeta del repositorio clonado en Visual Studio Code.
+
+## 2. Instalación de dependencias
+
+Instalar las dependencias base del proyecto:
+
+```bash
 npm install
-4. Instalar Material UI y sus dependencias:
-npm install @mui/material @emotion/react @emotion/styled
-5. Instalar Axios:
-npm install axios
-6. Instalar React Router:
-npm install react-router-dom
+```
 
-## Comandos útiles
-- Ejecutar el servidor de desarrollo
+Instalar Material UI y sus dependencias:
+
+```bash
+npm install @mui/material @emotion/react @emotion/styled
+```
+
+Instalar Axios (utilizado para consumo de APIs):
+
+```bash
+npm install axios
+```
+
+Instalar React Router (utilizado para la navegación entre vistas):
+
+```bash
+npm install react-router-dom
+```
+
+---
+
+# Comandos útiles
+
+## Ejecutar el servidor de desarrollo
+
+```bash
 npm run dev
-- Comprobar versión de dependencias
+```
+
+## Verificar las dependencias instaladas
+
+```bash
 npm list
-- Limpiar dependencias
+```
+
+## Limpiar dependencias y reinstalar
+
+```bash
 rm -rf node_modules
 npm install
+```
+
+---
+
+# Comandos Git
+
+## Revisar archivos modificados
+
+```bash
+git status
+```
+
+## Agregar cambios al área de preparación
+
+```bash
+git add .
+```
+
+## Crear un commit
+
+```bash
+git commit -m "Laboratorio [número]: descripción de cambios"
+```
+
+## Enviar cambios al repositorio remoto
+
+```bash
+git push
+```
