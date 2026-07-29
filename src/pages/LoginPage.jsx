@@ -1,12 +1,9 @@
 import { Button, Box, TextField, Typography } from "@mui/material";
 import { login } from "../services/authService";
-import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import "./LoginPage.css";
 
 export default function LoginPage() {
-
-    const navigate = useNavigate();
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -16,7 +13,7 @@ export default function LoginPage() {
         e.preventDefault();
         login(username, password).then((response) => {
             localStorage.setItem("token", response.access_token);
-            navigate("/");
+            window.location.href = "/";
         }).catch((error) => {
             console.error("Error en login:", error);
             setError("Usuario o contraseña incorrectos.");

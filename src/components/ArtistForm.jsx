@@ -61,6 +61,8 @@ export default function ArtistForm() {
             if (id) {
                 await updateArtist(id, artistData);
             } else {
+                console.log("artistData:", artistData);
+                console.log("picture:", artistData.picture);
                 await addArtist(artistData);
             }
 
@@ -110,7 +112,7 @@ export default function ArtistForm() {
                 <input
                 type="file"
                 accept="image/*"
-                name="cover"
+                name="picture"
                 onChange={handleChange}
                 />
                 {errorMsg && (

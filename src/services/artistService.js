@@ -4,9 +4,6 @@ const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 const apiClient = axios.create({
     baseURL: API_BASE_URL,
-    headers: {
-        "Content-Type": "application/json",
-    },
 });
 
 apiClient.interceptors.request.use((config) => {
@@ -48,18 +45,16 @@ export const addArtist = async (artistData) => {
         if (artistData.picture) {
             formData.append("picture", artistData.picture);
         }
-
-        const response = await apiClient.post("/artists/", formData,
-            {
-                headers: {
-                    "Content-Type": "multipart/form-data",
-                },
-            }
-        );
+        for (const pair of formData.entries()) {
+        console.log(pair[0], pair[1]);
+        }
+        const response = await apiClient.post("/artists/", formData, {});
 
         return response.data;
     } catch (error) {
-        console.error("Error agregando Artista:", error);
+        console.error("Error completo:", error);
+        console.error("Respuesta del servidor:", error.response?.data);
+        console.error("Error de picture:", error.response?.data?.picture);
         throw error;
     }
 };
@@ -74,13 +69,7 @@ export const updateArtist = async (id, artistData) => {
         if (artistData.picture) {
             formData.append("picture", artistData.picture);
         }
-        const response = await apiClient.patch( `/artists/${id}/`, formData,
-            {
-                headers: {
-                    "Content-Type": "multipart/form-data",
-                },
-            }
-        );
+        const response = await apiClient.patch( `/artists/${id}/`, formData, { });
         return response.data;
     } catch (error) {
         console.error("Error actualizando artista:", error);
@@ -109,13 +98,7 @@ export const addAlbum = async (albumData) => {
         if (albumData.cover) {
             formData.append("cover", albumData.cover);
         }
-        const response = await apiClient.post( "/albums/", formData,
-            {
-                headers: {
-                    "Content-Type": "multipart/form-data",
-                },
-            }
-        );
+        const response = await apiClient.post( "/albums/", formData, { });
 
         return response.data;
     } catch (error) {
